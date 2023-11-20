@@ -1,15 +1,21 @@
-const student = require("./Student");
+// Creates a course class that extends the student class
+const student = require('./Student');
 
-class course extends student{
-    constructor() {
-        super();
+class course extends student {
+    constructor(name) {
+        super(name);
         this.courses = [];
-        this.grades = [];
     }
 
-    addCourse(name, grades) {
-        this.courses.push();
-    };
+    // returns the array of courses
+    getCourse() {
+        return this.courses;
+    }
+
+    // pushes studen1 name and average grade to the course
+    addCourse(name, grade) {
+        this.courses.push({name: name, grade: grade});
+    }
 }
 
-modile.exports = course;
+module.exports = course;

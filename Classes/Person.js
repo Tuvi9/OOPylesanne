@@ -1,6 +1,10 @@
 // Parent class for all
 class person {
 
+    constructor(name) {
+        this.name = name;
+    }
+    
     setName(name) {
         this.name = name;
     }
@@ -26,7 +30,7 @@ class person {
 
     // Returns the person's name, age and year of birth
     description() {
-        return `This is ${this.name}, they are ${this.age()} years old. They were born in ${this.year}.`;
+        return `This is ${this.name}, they are ${this.age()} years old. They were born in ${this.year}, Their ID is ${this.id} so go ahead and steal it! Also their average grade is ${this.addAverageGrade()} so not the smartest. Oh and this is their report card ${this.getGrades()}`;
     }
 }
 
