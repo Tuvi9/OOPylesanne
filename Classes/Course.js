@@ -1,21 +1,25 @@
-// Creates a course class that extends the student class
-const student = require('./Student');
-
-class course extends student {
+class Course {
     constructor(name) {
-        super(name);
-        this.courses = [];
+        this.name = name;
+        this.grades = [];
     }
 
     // returns the array of courses
-    getCourse() {
-        return this.courses;
+    getGrades() {
+        return this.grades;
     }
 
-    // pushes studen1 name and average grade to the course
-    addCourse(name, grade) {
-        this.courses.push({name: name, grade: grade});
+    getAverageGrade() {
+        if (this.grades.length === 0) {
+            return -1
+        } else {
+            return (this.grades.reduce((a, b) => a + b[1], 0) / this.grades.length)
+        }
+    }
+
+    setGrades(grades) {
+        this.grades.push(grades)
     }
 }
 
-module.exports = course;
+module.exports = Course;

@@ -1,11 +1,6 @@
 // Parent class for all
-class person {
-
+class Person {
     constructor(name) {
-        this.name = name;
-    }
-    
-    setName(name) {
         this.name = name;
     }
     
@@ -35,4 +30,4 @@ class person {
 }
 
 // Export the person class
-module.exports = person;
+module.exports = Person;
