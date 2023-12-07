@@ -1,8 +1,8 @@
 // Creates a student class that extends the person class
-const Person = require('./Person');
+const Person = require('./Person').Person;
 
 // Create a student class that extends the person class
-class Student extends Person {
+const Student = class extends Person {
     constructor(name){
         super();
         this.name = name
@@ -37,4 +37,4 @@ class Student extends Person {
 }
 
 // Export the student class
-module.exports = Student;
+exports.Student = Student

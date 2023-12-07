@@ -1,4 +1,4 @@
-class Course {
+const Course = class {
     constructor(name) {
         this.name = name;
         this.grades = [];
@@ -20,6 +20,10 @@ class Course {
     setGrades(grades) {
         this.grades.push(grades)
     }
+
+    description() {
+        return `This is a course with the name ${this.name}`
+    }
 }
 
-module.exports = Course;
+exports.Course = Course

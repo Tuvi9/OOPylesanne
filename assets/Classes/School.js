@@ -1,9 +1,10 @@
 // Creates a school class that extends the course class
-const Student = require('./Student')
-const Course = require('./Course');
+const Student = require('./Student').Student;
+const Course = require('./Course').Course;
 
-class School {
+const School = class School extends Course {
     constructor(name) {
+        super();
         this.name = name
         this.students = [];
         this.courses = [];
@@ -27,7 +28,7 @@ class School {
     // If X is 7.yr or over then they are a student.
     addStudent(student) {
         if(student instanceof Student && !this.students.includes(student)) {
-            if(student.age() >= 7) {
+            if(student.age() >= 15) {
                 this.students.push(student);
                 student.setId(this.students.length)
             }
@@ -46,5 +47,4 @@ class School {
         return this.students.sort((a, b) => b.getAverageGrade() - a.getAverageGrade())
     }
 }
-
-module.exports = School;
+exports.School = School

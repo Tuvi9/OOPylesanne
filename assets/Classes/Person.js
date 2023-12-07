@@ -1,5 +1,5 @@
 // Parent class for all
-class Person {
+const Person = class {
     constructor(name) {
         this.name = name;
     }
@@ -20,14 +20,14 @@ class Person {
 
     // Calculates the age of the person (Current year - year of birth)
     age() {
-        return (new Date().getFullYear() - this.year);
+        return new Date().getFullYear() - this.year;
     }
 
     // Returns the person's name, age and year of birth
     description() {
-        return `This is ${this.name}, they are ${this.age()} years old. They were born in ${this.year}, Their ID is ${this.id} so go ahead and steal it! Also their average grade is ${this.addAverageGrade()} so not the smartest. Oh and this is their report card ${this.getGrades()}`;
+        return `This is a person with the name ${this.name} and age ${this.age()}`
     }
 }
 
 // Export the person class
-module.exports = Person;
+exports.Person = Person
